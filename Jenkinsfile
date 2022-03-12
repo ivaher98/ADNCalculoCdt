@@ -15,10 +15,5 @@ pipeline {
         checkout scm
       }
     }
-<<<<<<< HEAD:Jenkinsfile.groovy
   }
-
 }
-=======
-}
->>>>>>> 70733eeb448d633cc20227e13386baf28960925d:Jenkinsfile
