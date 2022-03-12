@@ -1,0 +1,16 @@
+<form  [formGroup]="formGroup != undefined ? formGroup : ''">
+    <div
+        [class]="'title-input ' + ((!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined) ? 'invalid' : '')">
+        {{title}}</div>
+    <div class="container-input-range">
+        <input class="range-input-style" [id]="controlName" type="range" [min]="minValue" [max]="maxValue" [step]="stepValue"
+            (change)="onChangeValue($event)" [formControlName]="controlName">
+        <div id="details">{{details}} dias</div>
+    </div> 
+    <div class="min-value">{{minValue}} dias</div>
+    <div class="max-value">{{maxValue}} dias</div>
+    <div *ngIf="errorText != undefined && (!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined)">
+        <div class="triangle-error"></div>
+        <div class="validation-error">{{errorText}}</div>
+    </div>
+</form>

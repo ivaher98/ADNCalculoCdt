@@ -1,0 +1,36 @@
+<div class="container-data">
+  <div class="form">
+    <div class="title">
+      Simula tu CDT
+    </div>
+    <div class="subtitle">
+      Desde $ 1.000.000 a $ 10.000.000
+      con un plazo de 90 hasta 360 días
+    </div>
+    <div class="body">
+      <div class="form-group">
+        <input-text [isValid]="isValid" maxLength="20" [title]="'Ingresa el valor a invertir'"
+          [errorText]="'El monto parece no estar bien'" [maskType]="maskTypeMoney"
+          [control]="form.controls.mountLending" [controlName]="'mountLending'" [formGroup]="dataSimulation"
+          [placeHolderText]="'$ 500.000'">
+        </input-text>
+      </div>
+      <div class="form-group">
+        <input-range [isValid]="true" [title]="'Días de la inversión'" [control]="form.controls.days"
+          [controlName]="'Days'" [formGroup]="dataSimulation" [minValue]="90" [maxValue]="360" [stepValue]="90"
+          (onSelected)="selectDays($event)"></input-range>
+      </div>
+      <div class="form-group">
+        <div class="box-rendimiento">
+          
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<router-outlet></router-outlet>

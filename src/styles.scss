@@ -1,0 +1,17 @@
+// /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url(./assets/fonts/Montserrat-Bold/Montserrat-Bold.woff)
+}
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url(./assets/fonts/OpenSans-Regular/OpenSans-Regular.woff)
+}
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url(./assets/fonts/Montserrat-Medium/Montserrat-Medium.woff);
+}
+
+body{ margin: 0px; height: 100%;  background-color: #F8F8F8; }
+input:focus{ outline: none; }
+select:focus { outline: none; }
