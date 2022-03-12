@@ -8,11 +8,13 @@ pipeline {
   tools {
     jdk 'JDK8_Centos'
   }
-
+  stages{
   stage('Checkout') {
       steps{
         echo "------------>Checkout<-----------"
         checkout scm
       }
     }
+  }
+
 }
