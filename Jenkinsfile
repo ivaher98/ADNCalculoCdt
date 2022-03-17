@@ -1,4 +1,5 @@
-@Library('ceiba-jenkins-library')
+@Library('ceiba-jenkins-library') _
+
 pipeline {
   agent any
 
@@ -25,8 +26,8 @@ pipeline {
     }
   stage('Static Code Analysis') {
     steps{
-        	sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:calculocdt.front.ivan.hernandez', 
-        sonarName:'CeibaADN-CalculoCdt-Front(ivan.hernandez)', 
+        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:calculocdt.front.ivan.hernandez', 
+        sonarName:'CeibaADN-CalculoCdt(ivan.hernandez)', 
         sonarPathProperties:'./sonar-project.properties')
     }
 } 
