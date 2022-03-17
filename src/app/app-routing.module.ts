@@ -5,9 +5,7 @@ import { SecurityGuard } from '@core/guard/security.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', canActivate: [SecurityGuard], loadChildren: () => import('@home/home.module').then(mod => mod.HomeModule) },
-  { path: 'producto', loadChildren: () => import('@producto/producto.module').then(mod => mod.ProductoModule) }
-  
+  { path: 'home', canActivate: [SecurityGuard], loadChildren: () => import('@home/home.module').then(mod => mod.HomeModule) }
 ];
 
 @NgModule({

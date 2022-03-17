@@ -1,20 +1,8 @@
 <form [class]="inputStyleType.type" [formGroup]="formGroup != undefined ? formGroup : ''">
-    <div *ngIf="title !== undefined" [class]="'title-input ' + ((!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined) ? 'invalid' : '')">{{title}}</div>
+    <div [class]="'title-input ' + ((!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined) ? 'invalid' : '')">{{title}}</div>
     <div [class]="'box-input-style ' + (disabledControl ? 'disabled ':'') + ((!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined) ? 'invalid' : '')">
-        <!-- ICON -->
-        <div *ngIf="icon != null" [class]="'icon-style'">
-            <img [src]="icon">
-        </div>
-        <!-- FIN ICON -->
-        <div *ngIf="details != null" [class]="'details-input-style ' + (disabledControl ? 'disabled ':'') + ((!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined) ? 'invalid' : '')">
-            {{details}}
-        </div>
-        <input type="text" maxlength="maxLength" minlength="minLength" [class]="'text-input-style ' + (details != null ? 'input-details' : '')" [placeholder]="placeHolderText != undefined ? placeHolderText : ''" [formControlName]="controlName" (keyup)="mask($event)"
+        <input type="text" [maxlength]="maxLength" [minlength]="minLength" [class]="'text-input-style ' + (details != null ? 'input-details' : '')" [placeholder]="placeHolderText != undefined ? placeHolderText : ''" [formControlName]="controlName" (keyup)="mask($event)"
             (focusout)="focusOut($event)">
-        <div *ngIf="errorText != undefined && (!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined)">
-            <div class="triangle-error"></div>
-            <div class="validation-error">{{errorText}}</div>
-        </div>
     </div>
 </form>
 <!-- <div [class]="inputStyleType.type" *ngIf="formGroup == undefined || controlName == undefined">

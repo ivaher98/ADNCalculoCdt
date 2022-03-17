@@ -1,0 +1,189 @@
+{
+  "datacdt": [
+    {
+      "id": 1,
+      "retfuente": 6.5,
+      "tasaInteres": [
+        {
+          "days": 90,
+          "intereseRate": 4
+        },
+        {
+          "days": 180,
+          "intereseRate": 4.5
+        },
+        {
+          "days": 270,
+          "intereseRate": 4.8
+        },
+        {
+          "days": 360,
+          "intereseRate": 5.1
+        }
+      ]
+    }
+  ],
+  "dataasesor": [
+    {
+      "name": "Juan Camilo García",
+      "cedula": "0123456789"
+    },
+    {
+      "name": "Maria Camila Lopez",
+      "cedula": "123235521"
+    },
+    {
+      "name": "Paula Rubiano García",
+      "cedula": "346452421"
+    },
+    {
+      "name": "Juan Jose Perez",
+      "cedula": "572354774"
+    }
+  ],
+  "datadate": [
+    {
+      "id": 2
+    },
+    {
+      "mountLending": "200000",
+      "days": "180",
+      "date": "24-08-28",
+      "nombreAsesor": "Ivan Camilo",
+      "id": 3
+    },
+    {
+      "mountLending": "200000",
+      "days": "180",
+      "date": "24-08-28",
+      "nombreAsesor": "Ivan Camilo",
+      "id": 4
+    },
+    {
+      "mountLending": "150000",
+      "days": "90",
+      "date": "18-3-2022",
+      "nombreAsesor": "Milena",
+      "id": 5
+    },
+    {
+      "mountLending": "150000",
+      "days": "90",
+      "nombreAsesor": "Milena",
+      "id": 6
+    },
+    {
+      "mountLending": "$ 2.500.000",
+      "Days": 270,
+      "id": 7
+    },
+    {
+      "mountLending": "$ 2.500.009",
+      "Days": 270,
+      "": {
+        "date": "2022-03-18",
+        "nombreAsesor": "Juan Camilo García"
+      },
+      "id": 8
+    },
+    {
+      "mountLending": "$ 2.000.000",
+      "Days": 180,
+      "dataDate": {
+        "date": "2022-03-19",
+        "nombreAsesor": "Juan Camilo García"
+      },
+      "id": 9
+    },
+    {
+      "mountLending": "$ 2.000.000",
+      "Days": 180,
+      "dataDate": {
+        "date": "2022-03-19",
+        "nombreAsesor": "Juan Camilo García"
+      },
+      "id": 10
+    },
+    {
+      "mountLending": "$ 2.400.000",
+      "Days": 180,
+      "dataDate": {
+        "date": "2022-03-19",
+        "nombreAsesor": "Juan Camilo García"
+      },
+      "id": 11
+    },
+    {
+      "mountLending": "$ 2.500.000",
+      "Days": 180,
+      "dataDate": {
+        "date": "2022-03-19",
+        "nombreAsesor": "Juan Camilo García"
+      },
+      "id": 12
+    },
+    {
+      "mountLending": "$ 200.000",
+      "Days": 270,
+      "dataDate": {
+        "date": "2022-03-19",
+        "nombreAsesor": "Juan Camilo García"
+      },
+      "id": 13
+    },
+    {
+      "mountLending": "$ 2.500.000",
+      "Days": 270,
+      "dataDate": {
+        "date": "2022-03-19",
+        "nombreAsesor": "Maria Camila Lopez"
+      },
+      "id": 14
+    },
+    {
+      "mountLending": "$ 2.500.000",
+      "Days": 270,
+      "dataDate": {
+        "date": "2022-03-19",
+        "nombreAsesor": "Maria Camila Lopez"
+      },
+      "id": 15
+    },
+    {
+      "mountLending": "$ 2.500.000",
+      "Days": 270,
+      "dataDate": {
+        "date": "2022-03-19",
+        "nombreAsesor": "Paula Rubiano García"
+      },
+      "id": 16
+    },
+    {
+      "mountLending": "$ 2.222",
+      "Days": 270,
+      "dataDate": {
+        "date": "2022-03-20",
+        "nombreAsesor": "Maria Camila Lopez"
+      },
+      "id": 17
+    },
+    {
+      "mountLending": "$ 2.500.000",
+      "Days": 270,
+      "dataDate": {
+        "date": "2022-03-20",
+        "nombreAsesor": "Juan Camilo García"
+      },
+      "id": 18
+    },
+    {
+      "mountLending": "$ 2.500.000",
+      "Days": 180,
+      "dataDate": {
+        "date": "2022-03-20",
+        "nombreAsesor": "Juan Camilo García"
+      },
+      "id": 19
+    }
+  ]
+}

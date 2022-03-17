@@ -5,6 +5,5 @@ export interface InputStyleTypeInterface {
 
 export const InputStyleTypes: Array<InputStyleTypeInterface> =
     [
-        // Estilos para el control input-text 
         { id: '1', type: 'blue-white' },
-    ]
+    ];

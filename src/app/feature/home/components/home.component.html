@@ -1,5 +1,5 @@
 <div class="container-data">
-  <div class="form">
+  <div class="form" id="formSimulate" *ngIf="viewFormDate">
     <div class="title">
       Simula tu CDT
     </div>
@@ -9,26 +9,53 @@
     </div>
     <div class="body">
       <div class="form-group">
-        <input-text [isValid]="isValid" maxLength="20" [title]="'Ingresa el valor a invertir'"
+        <app-input-text [isValid]="isValid" [maxLength]="11" [title]="'Ingresa el valor a invertir'"
           [errorText]="'El monto parece no estar bien'" [maskType]="maskTypeMoney"
           [control]="form.controls.mountLending" [controlName]="'mountLending'" [formGroup]="dataSimulation"
           [placeHolderText]="'$ 500.000'">
-        </input-text>
+        </app-input-text>
       </div>
       <div class="form-group">
-        <input-range [isValid]="true" [title]="'Días de la inversión'" [control]="form.controls.days"
+        <app-input-range [isValid]="isValid" [title]="'Días de la inversión'" [control]="form.controls.days"
           [controlName]="'Days'" [formGroup]="dataSimulation" [minValue]="90" [maxValue]="360" [stepValue]="90"
-          (onSelected)="selectDays($event)"></input-range>
+          (selectedEvent)="selectDays($event)" [initValue]="90"></app-input-range>
       </div>
       <div class="form-group">
         <div class="box-rendimiento">
-          
+          <div class="valueDays">
+            {{valueDays}}
+          </div>
+          <div class="container-button">
+            <button (click)="calculateInvestmentCdt()" *ngIf="dataSimulation.valid">
+              Calcular Rendimiento
+            </button>
+          </div>
         </div>
       </div>
     </div>
-
-
   </div>
+  <form class="container-assign" *ngIf="viewFormDate === false" [formGroup]="dataDate">
+    <div class="arrow-back" (click)="goBack()">&#8592;</div>
+    <div class="title">Asignación de cita</div>
+    <div class="form-group">
+      <label for="date-appointment">Escoge una fecha para tu cita</label>
+      <input type="date" class="date" id="date-appointment" formControlName="date">
+    </div>
+    <div class="form-group">
+      <label for="select-asesor">Selecciona un asesor con el que desees la cita</label>
+      <div class="select">
+        <select id="select-asesor" formControlName="nombreAsesor">
+          <option value="" selected>Selecione...</option>
+          <option value="{{item.name}}" id="{{item.cedula}}" *ngFor="let item of dataAsesor; trackBy: 'name' | trackBy">
+            {{item.name}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="button">
+      <button (click)="assignDateService()">Asignar cita</button>
+    </div>
+  </form>
 
 </div>
 

@@ -11,7 +11,11 @@
     font-family: 'Montserrat-Medium';
     src: url(./assets/fonts/Montserrat-Medium/Montserrat-Medium.woff);
 }
-
-body{ margin: 0px; height: 100%;  background-color: #F8F8F8; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body{ margin: 0px; height: 100%;  background-color: #F8F8F8; font-family: 'OpenSans-Regular';}
 input:focus{ outline: none; }
 select:focus { outline: none; }

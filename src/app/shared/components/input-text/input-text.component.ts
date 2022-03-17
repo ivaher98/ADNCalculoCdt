@@ -5,54 +5,48 @@ import { MaskTypeInterface, MaskTypes } from '@core/interface/maskType.interface
 import { UtilsFunctions } from '@core/modelo/utilsFunctions.model';
 
 @Component({
-    selector: 'input-text',
+    selector: 'app-input-text',
     templateUrl: './input-text.component.html',
     styleUrls: ['./input-text.component.scss']
 })
 export class InputTextComponent implements OnChanges {
-    @Input() isValid: boolean = true; // Variable para que el padre pueda indicar si es valido el input o no
-    @Input() title: String; // Titulo del input 
-    @Input() control: FormControl; // Control del formulario padre al cual se va a asociar el input
-    @Input() errorText: String; // Mensaje de error a mostrar cuando el campo sea invalido
-    @Input() controlName: string; // Nombre del control asociado al formulario padre
-    @Input() formGroup: FormGroup; // Formulario al cual esta asociado el control en el padre
-    @Input() placeHolderText: String; // Place holder a mostrar en en control
-    @Input() details: string = null; // Indica el valor a mostrar al lado izquierdo del control ej -> CC
-    @Input() maskType: MaskTypeInterface = MaskTypes.find(m => m.type == "default"); // Indica el tipo de mascara a utilizar en el control
-    @Input() inputStyleType: InputStyleTypeInterface = InputStyleTypes.find(i => i.id == "1"); // Indica el tipo de estilo a utilizar en el control
+    @Input() isValid: boolean;
+    @Input() title: string;
+    @Input() control: FormControl;
+    @Input() errorText: string;
+    @Input() controlName: string;
+    @Input() formGroup: FormGroup;
+    @Input() placeHolderText: string;
+    @Input() details: string = null;
+    @Input() maskType: MaskTypeInterface = MaskTypes.find(m => m.type === 'default');
+    @Input() inputStyleType: InputStyleTypeInterface = InputStyleTypes.find(i => i.id === '1');
     @Input() maxLength: number = undefined;
     @Input() minLength: number = undefined;
-    @Output() onFocusOut: EventEmitter<string> = new EventEmitter(); //Evento lanzado al perder el foco del control
-    public disabledControl: boolean = false; // Variable que indica si el control esta habilitado para editar o no
+    @Input() icon: string = null;
+    @Output() focusOutEvent: EventEmitter<string> = new EventEmitter();
+    public disabledControl: boolean;
 
-    @Input() icon:string=null;
-
-
-
-    // Constructor de la clase
     constructor(
         private utilsFunctions: UtilsFunctions
     ) { }
 
-    // evento lanzado al detectar cambios en las variables del control
     ngOnChanges(changes: SimpleChanges) {
-        if (changes.control != undefined && changes.control.firstChange) {
+        if (changes.control !== undefined && changes.control.firstChange && changes.control.currentValue !== undefined) {
             this.disabledControl = changes.control.currentValue.disabled;
-
-            let initialValue = changes.control.currentValue.value;
+            const initialValue = changes.control.currentValue.value;
             this.mask(undefined, initialValue);
         }
     }
 
-    // Evento encargado de aplicar la mascara al control si esta configurada
     mask(event: any, initialValue?: string) {
-        if (this.maskType != undefined) {
+        const initValue = initialValue;
+        if (this.maskType !== undefined) {
             switch (this.maskType.type) {
-                case "money":
-                    if (initialValue != undefined && initialValue != "") {
-                        this.f.get(this.controlName).setValue(this.utilsFunctions.validateMaskMoney(undefined, initialValue));
+                case 'money':
+                    if (initValue !== undefined && initValue !== '') {
+                        this.f.get(this.controlName).setValue(this.utilsFunctions.validateMaskMoney(undefined, initValue));
                     } else {
-                        let value = this.utilsFunctions.validateMaskMoney(event);
+                        const value = this.utilsFunctions.validateMaskMoney(event);
                         this.f.get(this.controlName).setValue(value);
                     }
                     break;
@@ -61,10 +55,10 @@ export class InputTextComponent implements OnChanges {
     }
 
     focusOut(event) {
-        let value = event.target.value;
-        this.onFocusOut.emit(this.utilsFunctions.getValueFromMaskMoney(value));
-        console.log(this.f);
+        const value = event.target.value;
+        this.focusOutEvent.emit(this.utilsFunctions.getValueFromMaskMoney(value));
     }
 
-    get f() { return this.formGroup }
+    get f() { return this.formGroup; }
+
 }

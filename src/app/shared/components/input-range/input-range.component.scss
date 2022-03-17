@@ -1,29 +1,155 @@
-.title-input{ width: 100%; position: relative; padding-left: 10px; text-align: left; font: 13px/20px Montserrat-Medium; letter-spacing: -0.16px; color: #8C8C8C; padding-top: 20px; padding-bottom: 2px; line-height: 16px; float: left; }
-.title-input.invalid { color: #FB2E2E !important; }
-.triangle-error { width: 0; height: 0; border-style: solid; border-width: 0 4.5px 7px 4.5px; border-color: transparent transparent #FB2E2E transparent; position: absolute; z-index: 3; top: 80px; left: 7px; }
-.validation-error { background: #FB2E2E 0% 0% no-repeat padding-box; border-radius: 5px; text-align: left; font: 10px/12px OpenSans-Regular; letter-spacing: 0px; color: #FFFFFF; line-height: 16px; position: absolute; z-index: 4; top: 86px; padding: 4px 8px 4px 8px; left: 0; max-width: 98%; }
+:host{
+    width: 100%;
+}
+.title-input {
+    width: 100%;
+    position: relative;
+    padding-left: 10px;
+    text-align: left;
+    font: 13px/20px Montserrat-Medium;
+    letter-spacing: -0.16px;
+    color: #8c8c8c;
+    padding-top: 20px;
+    padding-bottom: 2px;
+    line-height: 16px;
+    float: left;
+}
+.title-input.invalid {
+    color: #fb2e2e !important;
+}
+.triangle-error {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 4.5px 7px 4.5px;
+    border-color: transparent transparent #fb2e2e transparent;
+    position: absolute;
+    z-index: 3;
+    top: 80px;
+    left: 7px;
+}
+.validation-error {
+    background: #fb2e2e 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    text-align: left;
+    font: 10px/12px OpenSans-Regular;
+    letter-spacing: 0px;
+    color: #ffffff;
+    line-height: 16px;
+    position: absolute;
+    z-index: 4;
+    top: 86px;
+    padding: 4px 8px 4px 8px;
+    left: 0;
+    max-width: 98%;
+}
 
-.range-input-style, .range-input-style::-webkit-slider-runnable-track, .range-input-style::-webkit-slider-thumb { -webkit-appearance: none; }
-.range-input-style { width: 100%; height: 21px; /* Specific width is required for Firefox. */ border-radius: 10px; border: none; margin-top: 5px; background: linear-gradient(to right, #8EE473 0%, #8EE473 0%, #E0E0E0 0%, #E0E0E0 100%); }
+.range-input-style,
+.range-input-style::-webkit-slider-runnable-track,
+.range-input-style::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+.range-input-style {
+    width: 100%;
+    height: 21px; /* Specific width is required for Firefox. */
+    border-radius: 10px;
+    border: none;
+    margin-top: 5px;
+    background: linear-gradient(to right, #8ee473 0%, #8ee473 0%, #e0e0e0 0%, #e0e0e0 100%);
+}
 
-.range-input-style::-webkit-slider-thumb { width: 21px; height: 21px; border-radius: 50%; background: #0F265C 0% 0% no-repeat padding-box; margin-top: -5px; cursor: pointer; border: none; }
+.range-input-style::-webkit-slider-thumb {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: #0f265c 0% 0% no-repeat padding-box;
+    margin-top: -5px;
+    cursor: pointer;
+    border: none;
+}
 /* All the same stuff for Firefox */
-.range-input-style::-moz-range-thumb { width: 21px; height: 21px; border-radius: 50%; background: #0F265C 0% 0% no-repeat padding-box; cursor: pointer; border: none; }
+.range-input-style::-moz-range-thumb {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: #0f265c 0% 0% no-repeat padding-box;
+    cursor: pointer;
+    border: none;
+}
 /* All the same stuff for IE */
-.range-input-style::-ms-thumb { width: 21px; height: 21px; border-radius: 50%; background: #0F265C 0% 0% no-repeat padding-box; cursor: pointer; margin-top: 0px; }
+.range-input-style::-ms-thumb {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: #0f265c 0% 0% no-repeat padding-box;
+    cursor: pointer;
+    margin-top: 0px;
+}
 
 /* .range-input-style:focus { outline: none; }
 .range-input-style:focus::-webkit-slider-runnable-track{ outline: none; }
 .range-input-style:focus::-webkit-slider-runnable-track { background: #8EE473; } */
 
-.range-input-style::-webkit-slider-runnable-track { height: 21px; width: 100%; cursor: pointer; border-radius: 10px; border: 4.5px solid white; }
-.range-input-style::-moz-range-track { height: 13px; width: 100%; cursor: pointer; border-radius: 10px; border: 4.5px solid white; }
-.range-input-style::-ms-track { height: 21px; width: 100%; cursor: pointer; border-radius: 10px; color: transparent; border: 4.5px solid white; }
+.range-input-style::-webkit-slider-runnable-track {
+    height: 21px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 4.5px solid white;
+}
+.range-input-style::-moz-range-track {
+    height: 13px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 4.5px solid white;
+}
+.range-input-style::-ms-track {
+    height: 21px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    color: transparent;
+    border: 4.5px solid white;
+}
 
-.range-input-style::-ms-fill-lower { background-color: #8EE473 }
-.range-input-style::-ms-fill-upper { background-color: #E0E0E0; }
+.range-input-style::-ms-fill-lower {
+    background-color: #8ee473;
+}
+.range-input-style::-ms-fill-upper {
+    background-color: #e0e0e0;
+}
 
-.min-value { position: relative; float: left; text-align: left; font: 12px/17px OpenSans-SemiBold; letter-spacing: -0.12px; color: #E0E0E0; }
-.max-value { position: relative; float: right; text-align: left; font: 12px/17px OpenSans-SemiBold; letter-spacing: -0.12px; color: #E0E0E0; }
-#details{ position: absolute; z-index: 4; background: #0F265C 0% 0% no-repeat padding-box; border-radius: 5px; text-align: left; font: 11px/15px OpenSans-SemiBold; letter-spacing: -0.11px; color: #FFFFFF; width: 57px; height: 21px; line-height: 21px; box-sizing: border-box; padding-left: 5px; margin-top: 5px; }
+.min-value {
+    position: relative;
+    float: left;
+    text-align: left;
+    font: 12px/17px OpenSans-SemiBold;
+    letter-spacing: -0.12px;
+    color: #e0e0e0;
+}
+.max-value {
+    position: relative;
+    float: right;
+    text-align: left;
+    font: 12px/17px OpenSans-SemiBold;
+    letter-spacing: -0.12px;
+    color: #e0e0e0;
+}
+// #details {
+//     position: absolute;
+//     z-index: 4;
+//     background: #0f265c 0% 0% no-repeat padding-box;
+//     border-radius: 5px;
+//     text-align: left;
+//     font: 11px/15px OpenSans-SemiBold;
+//     letter-spacing: -0.11px;
+//     color: #ffffff;
+//     width: 57px;
+//     height: 21px;
+//     line-height: 21px;
+//     box-sizing: border-box;
+//     padding-left: 5px;
+//     margin-top: 5px;
+// }
 //.container-input-range:hover #details { display: block; }
