@@ -17,8 +17,8 @@ import { DataDate } from '@core/interface/dataDate.interface';
 export class HomeComponent implements OnInit {
   public isValid: boolean;
   public maskTypeMoney: MaskTypeInterface = MaskTypes.find(m => m.type === 'money');
-  public dataSimulation: FormGroup;
-  public dataDate: FormGroup;
+  public dataSimulation: FormGroup = new FormGroup({});
+  public dataDate: FormGroup = new FormGroup({});
   public inputTypeStyle: InputStyleTypeInterface = InputStyleTypes.find(m => m.type === '1');
   public interfaceInputRange: Array<DataListEffectiveRateInterface> = RateTypes;
   public valueDays: number;

@@ -9,7 +9,7 @@
     </div>
     <div class="body">
       <div class="form-group">
-        <app-input-text [isValid]="isValid" [maxLength]="11" [title]="'Ingresa el valor a invertir'"
+        <app-input-text  [isValid]="isValid" [maxLength]="11" [title]="'Ingresa el valor a invertir'"
           [errorText]="'El monto parece no estar bien'" [maskType]="maskTypeMoney"
           [control]="form.controls.mountLending" [controlName]="'mountLending'" [formGroup]="dataSimulation"
           [placeHolderText]="'$ 500.000'">
@@ -26,7 +26,7 @@
             {{valueDays}}
           </div>
           <div class="container-button">
-            <button (click)="calculateInvestmentCdt()" *ngIf="dataSimulation.valid">
+            <button (click)="calculateInvestmentCdt()" class="btn" id="btnCalculate" *ngIf="dataSimulation.valid">
               Calcular Rendimiento
             </button>
           </div>
