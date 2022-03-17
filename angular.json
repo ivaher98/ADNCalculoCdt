@@ -26,9 +26,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/flatpickr/dist/flatpickr.min.css" 
-                        
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -94,8 +92,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/flatpickr/dist/flatpickr.min.css"
+              "src/styles.scss"
                
             ],
             "scripts": [] 

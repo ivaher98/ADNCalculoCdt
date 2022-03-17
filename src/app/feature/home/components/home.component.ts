@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
     this.getDataCdtService();
     this.viewFormDate = true;
     this.isValid = true;
-    this.valueDays = 0;
+    this.valueDays = 90;
   }
 
   public selectDays(event: any) {
@@ -105,7 +105,7 @@ export class HomeComponent implements OnInit {
   private getDataAsesorService() {
     this.httpService.doGet(`${environment.endPointGetDataAsesor}`).subscribe((res: DataAsesorInterface[]) => {
       this.dataAsesor = res;
-      this.viewFormDate = true;
+      this.viewFormDate = false;
     });
   }
 

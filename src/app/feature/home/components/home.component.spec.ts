@@ -3,8 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpService } from '@core/services/http.service';
-// import { Test } from 'tslint';
-// import { By } from '@angular/platform-browser';
+
 
 
 import { HomeComponent } from './home.component';
@@ -13,19 +12,20 @@ import { HomeComponent } from './home.component';
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  let httpService: HttpService;
 
 
   beforeEach((() => {
+    httpService = TestBed.inject(HttpService);
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ],
+      declarations: [HomeComponent],
       imports: [
-          HttpClientModule,
-          ReactiveFormsModule,
-          FormsModule
-      ],
-      providers: [HttpService]
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
 
@@ -40,35 +40,47 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Validar formulario para calcular rendimiento de CDT', () =>{
-    const fixture = TestBed.createComponent(HomeComponent);
+  it('Http Service correctament', () => {
+    expect(httpService).toBeTruthy();
+  });
+
+  it('Validar formulario para calcular rendimiento de CDT', () => {
+    fixture = TestBed.createComponent(HomeComponent);
     const app = fixture.componentInstance;
-    fixture.detectChanges()
+    fixture.detectChanges();
+
+    const mountvar = 'mountLending';
+    const daysvar = 'Days';
 
     const form = app.dataSimulation;
-    const mountLending = form.controls['mountLending'];
-    const days = form.controls['Days'];
+    const mountLending = form.controls[mountvar];
+    const days = form.controls[daysvar];
     mountLending.setValue('2500000');
     days.setValue('180');
-    
-    // const btnElement = fixture.debugElement.query(By.css('button.btn'));
-    // btnElement.nativeElement.click();
 
-    expect(form.valid).toBeTrue()
-  })
+    expect(form.valid).toBeTrue();
+  });
 
- it('Calcular Rendimiento', () => {
-   const fixture = TestBed.createComponent(HomeComponent);
-   const app = fixture.componentInstance;
-   fixture.detectChanges()
+  it('Calcular Rendimiento', () => {
+    fixture = TestBed.createComponent(HomeComponent);
+    const app = fixture.componentInstance;
+    fixture.detectChanges();
 
-   const form = app.dataSimulation;
-   const mountLending = form.controls['mountLending'];
-   const days = form.controls['Days'];
-   mountLending.setValue('2500000');
-   days.setValue('180');
-   
- 
- })
+    const mountvar = 'mountLending';
+    const daysvar = 'Days';
+    const retfuente = 6;
+    let valueRen = 0;
+
+    const form = app.dataSimulation;
+    const mountLending = form.controls[mountvar];
+    const days = form.controls[daysvar];
+    mountLending.setValue('2500000');
+    days.setValue('180');
+
+    valueRen = (Number(mountLending) * (retfuente / 100) / Number(days));
+
+    expect(valueRen).toBeTrue();
+
+  });
 
 });
