@@ -11,9 +11,21 @@ pipeline {
   stages{
   stage('Checkout') {
       steps{
-        echo "------------>Checkout<-----------"
+       
         checkout scm
       }
     }
+    stage('NPM Install') {
+      steps {
+        sh 'npm install'
+      }
+    }
+    stage('Unit Test') {
+      steps {
+        sh 'npm run test'
+      }
+    }
+
   }
+  
 }
