@@ -1,9 +1,11 @@
 
 import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 import { HttpService } from '@core/services/http.service';
+import { SharedModule } from '@shared/shared.module';
 
 
 
@@ -22,11 +24,13 @@ describe('HomeComponent', () => {
         HttpClientModule,
         ReactiveFormsModule,
         FormsModule,
-        RouterModule
+        SharedModule
+        // RouterModule
       ],
       providers: [
         HttpService
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
   }));
