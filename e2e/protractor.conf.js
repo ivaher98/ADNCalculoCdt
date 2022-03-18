@@ -28,10 +28,10 @@ exports.config = {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')
     });
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
-    jasmine.getEnv().addReporter(new HtmlReporter({
-      baseDirectory: 'tmp/screenshots'
-   }).getJasmine2Reporter());
+  //   jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+  //   jasmine.getEnv().addReporter(new HtmlReporter({
+  //     baseDirectory: 'tmp/screenshots'
+  //  }).getJasmine2Reporter());
     
   }
 };
