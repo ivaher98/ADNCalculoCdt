@@ -1,7 +1,9 @@
 
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { HttpService } from '@core/services/http.service';
 
 
@@ -20,7 +22,9 @@ describe('HomeComponent', () => {
       imports: [
         HttpClientModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        NgModule,
+        RouterModule
       ],
       providers: [
         HttpService
