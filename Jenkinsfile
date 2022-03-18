@@ -8,9 +8,9 @@ pipeline {
   }
 
   stages{
+
   stage('Checkout') {
       steps{
-       
         checkout scm
       }
     }
@@ -22,7 +22,7 @@ pipeline {
   stage('Static Code Analysis') {
     steps{
         sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:calculocdt.front.ivan.hernandez', 
-        sonarName:'CeibaADN-CalculoCdt(ivan.hernandez)', 
+        sonarName:'ADN-CalculoCdtFront(ivan.hernandez)', 
         sonarPathProperties:'./sonar-project.properties')
     }
 } 
