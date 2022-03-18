@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="button">
-      <button (click)="assignDateService()">Asignar cita</button>
+      <button (click)="assignDateService()" *ngIf="dataDate.valid"> Asignar cita</button>
     </div>
   </form>
 

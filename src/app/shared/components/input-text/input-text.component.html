@@ -1,7 +1,7 @@
 <form [class]="inputStyleType.type" [formGroup]="formGroup != undefined ? formGroup : ''">
     <div [class]="'title-input ' + ((!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined) ? 'invalid' : '')">{{title}}</div>
     <div [class]="'box-input-style ' + (disabledControl ? 'disabled ':'') + ((!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined) ? 'invalid' : '')">
-        <input type="text" [maxlength]="maxLength" [minlength]="minLength" [class]="'text-input-style ' + (details != null ? 'input-details' : '')" [placeholder]="placeHolderText != undefined ? placeHolderText : ''" [formControlName]="controlName" (keyup)="mask($event)"
+        <input [id]="controlName" type="text" [maxlength]="maxLength" [minlength]="minLength" [class]="'text-input-style ' + (details != null ? 'input-details' : '')" [placeholder]="placeHolderText != undefined ? placeHolderText : ''" [formControlName]="controlName" (keyup)="mask($event)"
             (focusout)="focusOut($event)">
     </div>
 </form>

@@ -76,6 +76,15 @@
         "nombreAsesor": "Paula Rubiano García"
       },
       "id": 6
+    },
+    {
+      "mountLending": "$ 2.000.000",
+      "Days": 270,
+      "dataDate": {
+        "date": "",
+        "nombreAsesor": ""
+      },
+      "id": 7
     }
   ]
 }
