@@ -19,7 +19,11 @@ pipeline {
         sh 'npm install'
       }
     }
-    
+    stage("Test Unit"){
+      steps{
+        sh "npm run test"
+      }
+    }
   stage('Static Code Analysis') {
     steps{
         withSonarQubeEnv('Sonar'){
