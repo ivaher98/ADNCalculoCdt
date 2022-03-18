@@ -31,8 +31,6 @@ pipeline {
         withSonarQubeEnv('Sonar'){
           sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
         }
-    }
-    steps{
       sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:[calculocdt.front.ivan.hernandez]', 
       sonarName:'ADN-CalculoCdtFront(ivan.hernandez)', 
       sonarPathProperties:'./sonar-project.properties')
