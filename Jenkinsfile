@@ -21,7 +21,7 @@ pipeline {
     }
   stage('Static Code Analysis') {
     steps{
-        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:calculocdt.front.ivan.hernandez', 
+        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:[calculocdt.front.ivan.hernandez]', 
         sonarName:'ADN-CalculoCdtFront(ivan.hernandez)', 
         sonarPathProperties:'./sonar-project.properties')
     }
