@@ -23,7 +23,6 @@ describe('HomeComponent', () => {
         HttpClientModule,
         ReactiveFormsModule,
         FormsModule,
-        NgModule,
         RouterModule
       ],
       providers: [
