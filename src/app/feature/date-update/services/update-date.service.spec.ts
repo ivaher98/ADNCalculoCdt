@@ -3,17 +3,17 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpService } from '@core/services/http.service';
-import { DeleteDateService } from './deletedate.service';
+import { UpdateDateService } from './update-date.service';
 
-describe('Service: Deletedate', () => {
+describe('Service: UpdateDate', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [DeleteDateService, HttpService]
+      providers: [UpdateDateService, HttpService]
     });
   });
 
-  it('should ...', inject([DeleteDateService], (service: DeleteDateService) => {
+  it('should ...', inject([UpdateDateService], (service: UpdateDateService) => {
     expect(service).toBeTruthy();
   }));
 });

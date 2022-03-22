@@ -9,7 +9,7 @@ import { ConsultDateService } from './services/consultdate.service';
   imports: [
     CommonModule,
     SharedModule,
-    DataConsultRoutingModule
+    DataConsultRoutingModule,
   ],
   declarations: [DateConsultComponent],
   providers: [ConsultDateService]

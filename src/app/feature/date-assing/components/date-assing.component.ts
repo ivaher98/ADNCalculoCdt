@@ -7,7 +7,7 @@ import { InputStyleTypeInterface, InputStyleTypes } from '@core/interface/inputS
 import { MaskTypeInterface, MaskTypes } from '@core/interface/maskType.interfaces';
 import { AssignDateService } from '../shared/services/assigndate.service';
 import Swal from 'sweetalert2';
-import { AssignDateModel } from '../../../core/interface/assignDate';
+import { AssignDateModel } from '../../../core/interface/assignDate.interface';
 import { Router } from '@angular/router';
 
 @Component({
@@ -78,7 +78,7 @@ export class DateAssingComponent implements OnInit {
     this.dataSimulation.addControl('dataBasicPersonal', this.dataBasicPersonal);
     assignDate = this.formCdt.value;
     this.assignService.assignDateCdt(assignDate).
-      subscribe((res: AssignDateModel) => {
+      subscribe((res: any) => {
         if (res) {
           Swal.fire({
             icon: 'success',
@@ -122,7 +122,7 @@ export class DateAssingComponent implements OnInit {
   }
 
   private getDataAsesorService() {
-    this.assignService.getInfoAsesor().subscribe((res: DataAsesorInterface[]) => {
+    this.assignService.getInfoAsesor().subscribe((res: any) => {
       this.dataAsesor = res;
     })
   }

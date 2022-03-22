@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AssignDateModel } from '@core/interface/assignDate';
+import { AssignDateModel } from '@core/interface/assignDate.interface';
 import Swal from 'sweetalert2';
 import { DeleteDateService } from '../service/deletedate.service';
 

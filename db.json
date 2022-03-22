@@ -1,7 +1,6 @@
 {
   "datacdt": [
     {
-      "id": 1,
       "retfuente": 6.5,
       "tasaInteres": 4.5
     }
@@ -24,5 +23,38 @@
       "cedula": "572354774"
     }
   ],
-  "datadate": []
+  "datadate": [
+    {
+      "id": "1026595311",
+      "dataSimulation": {
+        "mountLending": "$ 5.000.000",
+        "days": 270,
+        "dataDate": {
+          "date": "2022-03-27",
+          "nameAssesor": "Juan Jose Perez"
+        },
+        "dataBasicPersonal": {
+          "nameUser": "Ivan Camilo",
+          "lastNameUser": "Hernandez Leon",
+          "document": "1026595311"
+        }
+      }
+    },
+    {
+      "id": "123456789",
+      "dataSimulation": {
+        "mountLending": "$ 3.000.000",
+        "days": 270,
+        "dataDate": {
+          "date": "2022-03-26",
+          "nameAssesor": "Paula Rubiano García"
+        },
+        "dataBasicPersonal": {
+          "nameUser": "Valentina",
+          "lastNameUser": "Morales",
+          "document": "123456789"
+        }
+      }
+    }
+  ]
 }

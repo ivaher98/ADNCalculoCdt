@@ -12,6 +12,6 @@ import { AssignDateService } from './shared/services/assigndate.service';
     DataAssingRoutingModule
   ],
   declarations: [DateAssingComponent],
-  providers: [AssignDateService]
+  providers: [AssignDateService],
 })
 export class DateAssingModule { }

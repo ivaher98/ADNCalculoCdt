@@ -13,13 +13,18 @@ const routes: Routes = [
     loadChildren: () => import('../date-assing/date-assing.module').then(m => m.DateAssingModule)
   },
   {
-    path:'dating-consult',
+    path: 'dating-consult',
     loadChildren: () => import('../date-consult/date-consult.module').then(m => m.DateConsultModule)
   },
   {
     path: 'dating-delete',
     loadChildren: () => import('../date-delete/date-delete.module').then(m => m.DateDeleteModule)
+  },
+  {
+    path: 'dating-update',
+    loadChildren: () => import('../date-update/date-update.module').then(m => m.DateUpdateModule)
   }
+
 ];
 
 @NgModule({

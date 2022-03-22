@@ -4,6 +4,7 @@ import { SharedModule } from '@shared/shared.module';
 import { DateDeleteComponent } from './components/date-delete.component';
 import { DataDeleteRoutingModule } from './data-delete-routing.module';
 import { DeleteDateService } from './service/deletedate.service';
+import { HttpService } from '@core/services/http.service';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { DeleteDateService } from './service/deletedate.service';
     SharedModule
   ],
   declarations: [DateDeleteComponent],
-  providers: [DeleteDateService]
+  providers: [DeleteDateService, HttpService]
 })
 export class DateDeleteModule { }
