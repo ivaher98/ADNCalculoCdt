@@ -17,7 +17,7 @@ pipeline {
     }
     stage("Test Unit"){
       steps{
-        sh "npm run test"
+        sh "npm run test --watch=false --browsers ChromeHeadless"
       }
     }
   stage('Static Code Analysis') {
