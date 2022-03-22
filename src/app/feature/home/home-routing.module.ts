@@ -19,12 +19,7 @@ const routes: Routes = [
   {
     path: 'dating-delete',
     loadChildren: () => import('../date-delete/date-delete.module').then(m => m.DateDeleteModule)
-  },
-  {
-    path: 'dating-update',
-    loadChildren: () => import('../date-update/date-update.module').then(m => m.DateUpdateModule)
   }
-
 ];
 
 @NgModule({

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AssignDateModel } from '@core/interface/assignDate.interface';
 import Swal from 'sweetalert2';
 import { DeleteDateService } from '../service/deletedate.service';
 
@@ -24,7 +23,7 @@ export class DateDeleteComponent implements OnInit {
 
   public deleteDateService() {
     let documentUser = this.formDelete.controls['document'].value;
-    this.deleteService.deleteDate(documentUser).subscribe((res: AssignDateModel) => {
+    this.deleteService.deleteDate(documentUser).subscribe((res: any) => {
       alert('1');
       if (res) {
         Swal.fire(

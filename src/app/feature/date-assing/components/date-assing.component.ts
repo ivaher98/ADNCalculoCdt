@@ -57,6 +57,7 @@ export class DateAssingComponent implements OnInit {
     this.getDataCdtService();
     this.viewFormSimulate = true;
     this.viewFormDataPersonal = false;
+    this.viewFormDate = false;
     this.isValid = true;
     this.valueDays = 90;
   }
@@ -115,7 +116,7 @@ export class DateAssingComponent implements OnInit {
     });
   }
 
-  private getDataCdtService() {
+  public getDataCdtService() {
     this.assignService.getInfoCdt().subscribe((res: DataCdtInterface) => {
       this.dataCdt = res;
     })

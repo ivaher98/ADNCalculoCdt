@@ -12,6 +12,6 @@ export class DeleteDateService {
   }
 
   public deleteDate(id: string) {
-    return this.httpService.doDelete(`${environment.endPointDataDate + '/' + id}`);
+    return this.httpService.doDelete<boolean>(`${environment.endPointDataDate + '/' + id}`);
   }
 }

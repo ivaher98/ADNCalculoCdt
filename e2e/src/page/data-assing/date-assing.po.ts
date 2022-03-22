@@ -1,23 +1,23 @@
 import { browser, by, element } from 'protractor';
 
-export class HomePage {
-    navigateTo() {
-        return browser.get('/');
+export class DataAssignPage {
+    async navigateTo() {
+        await browser.get('/');
     }
 
-    getMountLending() {
+    async getMountLending() {
         return element(by.id('mountLending')).getText();
     }
 
-    getDays() {
+    async getDays() {
         element(by.id('days')).getText();
     }
 
-    getButtonCalculate() {
+    async getButtonCalculate() {
         return element(by.id('btnCalculate')).click();
     }
 
-    makeCdt(amount: number, days: number){
+    async makeCdt(amount: number, days: number){
         element(by.id('mountLending')).sendKeys(amount);
         element(by.id('days')).sendKeys(days);
         element(by.id('btnCalculate')).click();
