@@ -1,0 +1,14 @@
+<div class="container-form">
+  <div class="form-group">
+    <app-input-text [isValid]="isValid" [maxLength]="30" [title]="'Ingresa tú número de cédula'"
+      [control]="fDelete.controls.document" [controlName]="'document'" [formGroup]="formDelete"
+      [placeHolderText]="'1.026.595.311'">
+    </app-input-text>
+  </div>
+
+  <div class="container-button">
+    <button (click)="deleteDateService()">Eliminar cita</button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

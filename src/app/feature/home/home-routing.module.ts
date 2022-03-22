@@ -7,6 +7,18 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path: 'dating-assignment',
+    loadChildren: () => import('../date-assing/date-assing.module').then(m => m.DateAssingModule)
+  },
+  {
+    path:'dating-consult',
+    loadChildren: () => import('../date-consult/date-consult.module').then(m => m.DateConsultModule)
+  },
+  {
+    path: 'dating-delete',
+    loadChildren: () => import('../date-delete/date-delete.module').then(m => m.DateDeleteModule)
   }
 ];
 

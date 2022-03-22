@@ -1,0 +1,139 @@
+.title {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 28px;
+    font-family: "Montserrat-Bold";
+    color: #0f265c;
+    font-weight: bold;
+}
+.subtitle {
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+    color: #1b2d54;
+    font-family: "OpenSans-Regular";
+    max-width: 380px;
+}
+.container-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    background-color: #0f265c;
+    color: #fff;
+    height: 48px;
+    width: 200px;
+    border: none;
+    border: 1px solid #0f265c;
+    border-radius: 16px;
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container-data {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    > .form {
+        display: block;
+        padding: 20px;
+        border: 1px solid #e0e0e0;
+        background-color: #fff;
+        border-radius: 0 0 40px 0;
+        width: auto;
+        height: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        > .body {
+            width: 90%;
+            max-width: 350px;
+            margin: 0 auto;
+            > .form-group {
+                display: flex;
+                margin-bottom: 16px;
+            }
+        }
+        .box-rendimiento {
+            display: flex;
+            width: 100%;
+            .valueDays {
+                color: #0f265c;
+                font-weight: bold;
+                font-family: "Montserrat-Bold";
+                font-size: 24px;
+                border: 1px solid #e0e0e0;
+                padding: 20px;
+                border-radius: 16px;
+            }
+        }
+    }
+    > .container-assign {
+        padding: 20px;
+        border: 1px solid #e0e0e0;
+        background-color: #fff;
+        border-radius: 0px 0px 10px 10px;
+        border-top: 10px solid #0f265c;
+        width: 565px;
+        max-height: 700px;
+
+        > .form-group {
+            label {
+                display: block;
+                margin: 12px 0 12px 0;
+                color: #7c7c7c;
+                font-family: "OpenSans-Regular";
+                font-size: 16px;
+            }
+            .select {
+                width: 100%;
+                border: 1px solid #e0e0e0;
+                border-radius: 0.25em;
+                padding: 0.25em 0.5em;
+                font-size: 1.25rem;
+                cursor: pointer;
+                line-height: 1.1;
+                background-color: #fff;
+                font-size: 16px;
+                select {
+                    appearance: none;
+                    background-color: transparent;
+                    border: none;
+                    padding: 0 1em 0 0;
+                    margin: 0;
+                    width: 100%;
+                    font-family: inherit;
+                    font-size: inherit;
+                    cursor: inherit;
+                    line-height: inherit;
+                    outline: none;
+                }
+                select::-ms-expand {
+                    display: none;
+                }
+            }
+        }
+        .arrow-back {
+            font-size: 24px;
+            margin: 0;
+            width: 0;
+            height: 0;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .date {
+            width: 100%;
+            padding: 4px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+            font-family: "OpenSans-Regular";
+            font-size: 16px;
+        }
+    }
+}

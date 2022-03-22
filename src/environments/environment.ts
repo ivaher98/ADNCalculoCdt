@@ -5,9 +5,9 @@ const domain = 'http://localhost:3000';
 export const environment = {
   production: false,
   endpoint: '/prospectos-vida',
-  endPointGetDataCdt: domain + '/datacdt',
-  endPointGetDataAsesor: domain + '/dataasesor',
-  endPointAssignDate: domain + '/datadate'
+  endPointGetDataCdt: `${domain}/datacdt`,
+  endPointGetDataAsesor: `${domain}/dataasesor`,
+  endPointDataDate: `${domain}/datadate`,
 };
 
 /*

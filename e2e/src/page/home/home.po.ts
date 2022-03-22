@@ -10,7 +10,7 @@ export class HomePage {
     }
 
     getDays() {
-        element(by.id('Days')).getText();
+        element(by.id('days')).getText();
     }
 
     getButtonCalculate() {
@@ -19,7 +19,7 @@ export class HomePage {
 
     makeCdt(amount: number, days: number){
         element(by.id('mountLending')).sendKeys(amount);
-        element(by.id('Days')).sendKeys(days);
+        element(by.id('days')).sendKeys(days);
         element(by.id('btnCalculate')).click();
     }
 }

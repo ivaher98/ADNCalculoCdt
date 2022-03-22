@@ -3,24 +3,7 @@
     {
       "id": 1,
       "retfuente": 6.5,
-      "tasaInteres": [
-        {
-          "days": 90,
-          "intereseRate": 4
-        },
-        {
-          "days": 180,
-          "intereseRate": 4.5
-        },
-        {
-          "days": 270,
-          "intereseRate": 4.8
-        },
-        {
-          "days": 360,
-          "intereseRate": 5.1
-        }
-      ]
+      "tasaInteres": 4.5
     }
   ],
   "dataasesor": [
@@ -41,50 +24,5 @@
       "cedula": "572354774"
     }
   ],
-  "datadate": [
-    {
-      "id": 2
-    },
-    {
-      "mountLending": "200000",
-      "days": "180",
-      "date": "24-08-28",
-      "nombreAsesor": "Ivan Camilo",
-      "id": 3
-    },
-    {
-      "mountLending": "200000",
-      "days": "180",
-      "date": "24-08-28",
-      "nombreAsesor": "Ivan Camilo",
-      "id": 4
-    },
-    {
-      "mountLending": "$ 2.500.000",
-      "Days": 180,
-      "dataDate": {
-        "date": "2022-03-20",
-        "nombreAsesor": "Maria Camila Lopez"
-      },
-      "id": 5
-    },
-    {
-      "mountLending": "$ 23.132",
-      "Days": 180,
-      "dataDate": {
-        "date": "2022-03-26",
-        "nombreAsesor": "Paula Rubiano García"
-      },
-      "id": 6
-    },
-    {
-      "mountLending": "$ 2.000.000",
-      "Days": 270,
-      "dataDate": {
-        "date": "",
-        "nombreAsesor": ""
-      },
-      "id": 7
-    }
-  ]
+  "datadate": []
 }
