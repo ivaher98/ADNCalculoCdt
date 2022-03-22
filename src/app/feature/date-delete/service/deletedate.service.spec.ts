@@ -22,10 +22,10 @@ describe('Service: Deletedate', () => {
   it('debería borrar cita', () => {
     fixture = TestBed.createComponent(DateDeleteComponent);
     fixture.detectChanges();
-    const id = "1026595311";
+    const id = '1026595311';
     service.deleteDate(id).subscribe(res => {
-      expect(res).toEqual(true)
-    })
-  })
+      expect(res).toEqual(true);
+    });
+  });
 
 });

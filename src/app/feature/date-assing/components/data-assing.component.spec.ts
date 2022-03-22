@@ -1,11 +1,11 @@
-import { HttpClientModule } from "@angular/common/http";
-import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { RouterTestingModule } from "@angular/router/testing";
-import { HttpService } from "@core/services/http.service";
-import { SharedModule } from "@shared/shared.module";
-import { DateAssingComponent } from "./date-assing.component";
+import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpService } from '@core/services/http.service';
+import { SharedModule } from '@shared/shared.module';
+import { DateAssingComponent } from './date-assing.component';
 
 describe('DateAssingComponent', () => {
     let fixture: ComponentFixture<DateAssingComponent>;
@@ -36,8 +36,8 @@ describe('DateAssingComponent', () => {
         fixture.detectChanges();
 
         const form = app.dataSimulation;
-        const mountLending = form.controls['mountLending'];
-        const days = form.controls['days'];
+        const mountLending = form.controls[`mountLending`];
+        const days = form.controls[`days`];
         mountLending.setValue('2500000');
         days.setValue('180');
         expect(form.valid).toBeTrue();
@@ -57,13 +57,4 @@ describe('DateAssingComponent', () => {
         form.controls[controlNombreAsesor].setValue(asesor);
         expect(form.valid).toBeTrue();
     });
-
-    it('debería mostrar formulario', () => {
-        fixture = TestBed.createComponent(DateAssingComponent);
-        const app = fixture.componentInstance;
-        fixture.detectChanges();
-
-        console.log(app);
-        // expect(formDate).toEqual(true);
-    })
 });

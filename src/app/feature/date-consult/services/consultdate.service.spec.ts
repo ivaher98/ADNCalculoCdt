@@ -13,36 +13,31 @@ import { DateConsultComponent } from '../components/date-consult.component';
 import { ConsultDateService } from './consultdate.service';
 
 
-describe("Prueba consultar cita", () => {
+describe('Prueba consultar cita', () => {
   let service: ConsultDateService;
   let fixture: ComponentFixture<DateConsultComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, RouterTestingModule],
-      providers: [ConsultDateService, HttpService,]
-    })
+      providers: [ConsultDateService, HttpService]
+    });
     service = TestBed.inject(ConsultDateService);
   });
 
   it('debería consultar cita', () => {
-
     fixture = TestBed.createComponent(DateConsultComponent);
     fixture.detectChanges();
 
-    let dataDate: DataDate = new DataDate("Juan Camilo", "2-22-2022");
-    let dataBasicPersonal: DataUser = new DataUser("Iván Camilo", "Hernandez Leon", 1026595311)
-    let dataSimulation: DataSimulation = new DataSimulation('$2.500.000', 270, dataDate, dataBasicPersonal)
-    let dummyAssignDate: AssignDateModel = new AssignDateModel('1026595311', dataSimulation)
+    const dataDate: DataDate = new DataDate('Juan Camilo', '2-22-2022');
+    const dataBasicPersonal: DataUser = new DataUser('Iván Camilo', 'Hernandez Leon', 1026595311);
+    const dataSimulation: DataSimulation = new DataSimulation('$2.500.000', 270, dataDate, dataBasicPersonal);
+    const dummyAssignDate: AssignDateModel = new AssignDateModel('1026595311', dataSimulation);
     // const endPointConsultDate = `${environment.endPointDataDate + '/' + dataBasicPersonal.document}`;
 
     service.getDate(dataBasicPersonal.document).subscribe(res => {
       expect(res).toEqual(dummyAssignDate);
-    })
+    });
+  });
 
-
-
-  })
-})
-
-
+});

@@ -21,7 +21,7 @@ export class AssignDateService {
   }
 
   assignDateCdt(assignDate: AssignDateModel) {
-    return this.httpService.doPost<AssignDateModel, boolean>(environment.endPointDataDate, assignDate, this.httpService.optsName("application/json"));
+    return this.httpService.doPost<AssignDateModel, boolean>(environment.endPointDataDate, assignDate, this.httpService.optsName('application/json'));
   }
 
 }

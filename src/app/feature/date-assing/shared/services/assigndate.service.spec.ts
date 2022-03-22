@@ -25,8 +25,8 @@ describe('DataAssign Service', () => {
   beforeEach(() => {
     const injector = TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, RouterTestingModule],
-      providers: [AssignDateService, HttpService,]
-    })
+      providers: [AssignDateService, HttpService]
+    });
     httpMock = injector.inject(HttpTestingController);
     service = TestBed.inject(AssignDateService);
   });
@@ -37,32 +37,32 @@ describe('DataAssign Service', () => {
     fixture = TestBed.createComponent(DateAssingComponent);
     fixture.detectChanges();
 
-    let dataDate: DataDate = new DataDate("Juan Camilo", "2-22-2022");
-    let dataBasicPersonal: DataUser = new DataUser("Iván Camilo", "Hernandez Leon", 1026595311)
-    let dataSimulation: DataSimulation = new DataSimulation('$2.500.000', 270, dataDate, dataBasicPersonal)
-    let dummyAssignDate: AssignDateModel = new AssignDateModel('1026595311', dataSimulation)
+    const dataDate: DataDate = new DataDate('Juan Camilo', '2-22-2022');
+    const dataBasicPersonal: DataUser = new DataUser('Iván Camilo', 'Hernandez Leon', 1026595311);
+    const dataSimulation: DataSimulation = new DataSimulation('$2.500.000', 270, dataDate, dataBasicPersonal);
+    const dummyAssignDate: AssignDateModel = new AssignDateModel('1026595311', dataSimulation);
 
     service.assignDateCdt(dummyAssignDate).subscribe(res => {
       expect(res).toEqual(true);
-    })
+    });
     const req = httpMock.expectOne(endPointAssignDate);
     expect(req.request.method).toBe('POST');
     req.event(new HttpResponse<boolean>({ body: true }));
   });
 
   it('debería obtener info CDT', () => {
-    let dataCdt: DataCdtInterface = new DataCdtInterface(6.5, 4.5);
-    service.getInfoCdt().subscribe( (res: DataCdtInterface)  =>{
+    const dataCdt: DataCdtInterface = new DataCdtInterface(6.5, 4.5);
+    service.getInfoCdt().subscribe( (res: DataCdtInterface)  => {
       expect(res).toEqual(dataCdt);
-    })
-  })
+    });
+  });
 
   it('debería obtener info Asesor', () => {
-    let dataAsesor: DataAsesorInterface = new DataAsesorInterface("Juan Camilo García", "0123456789");
-    service.getInfoAsesor().subscribe(res =>{
+    const dataAsesor: DataAsesorInterface = new DataAsesorInterface('Juan Camilo García', '0123456789');
+    service.getInfoAsesor().subscribe(res => {
       expect(res).toEqual(dataAsesor);
-    })
-  })
+    });
+  });
 
 
   it('should be created', () => {
@@ -70,5 +70,4 @@ describe('DataAssign Service', () => {
     expect(assignDataService).toBeTruthy();
   });
 
-
-})
+});

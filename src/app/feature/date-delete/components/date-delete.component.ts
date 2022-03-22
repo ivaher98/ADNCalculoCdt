@@ -19,10 +19,11 @@ export class DateDeleteComponent implements OnInit {
     this.formDelete = new FormGroup({
       document: new FormControl('', [Validators.required]),
     });
+    this.isValid = true;
   }
 
   public deleteDateService() {
-    let documentUser = this.formDelete.controls['document'].value;
+    const documentUser = this.formDelete.controls['document'].value;
     this.deleteService.deleteDate(documentUser).subscribe((res: any) => {
       alert('1');
       if (res) {
@@ -30,8 +31,8 @@ export class DateDeleteComponent implements OnInit {
           {
             icon: 'success',
             text: `Se ha eliminado con éxito la cita`
-          }).then(() => {
-            this.route.navigate(['./home'])
+          }).then( () => {
+            this.route.navigate(['./home']);
           });
       }
       else {
@@ -40,13 +41,13 @@ export class DateDeleteComponent implements OnInit {
             icon: 'error',
             text: `No tienes citas asignadas para borrar`
           }).then(() => {
-            this.route.navigate(['./home'])
-          });;
+            this.route.navigate(['./home']);
+          });
       }
     });
 
   }
 
-  get fDelete() { return this.formDelete }
+  get fDelete() { return this.formDelete; }
 
 }

@@ -11,7 +11,7 @@ export class ConsultDateService {
 
 constructor(private http: HttpService) { }
 
-  getDate(id: number):Observable<AssignDateModel>{
+  getDate(id: number): Observable<AssignDateModel>{
     return this.http.doGet<AssignDateModel>(`${environment.endPointDataDate + '/' + id}`);
   }
 

@@ -6,20 +6,20 @@ export class DataAssignPage {
     }
 
     async getMountLending() {
-        return element(by.id('mountLending')).getText();
+        await element(by.css('#mountLending')).getText();
     }
 
     async getDays() {
-        element(by.id('days')).getText();
+        await element(by.css('#days')).getText();
     }
 
     async getButtonCalculate() {
-        return element(by.id('btnCalculate')).click();
+        await element(by.css('#btnCalculate')).click();
     }
 
     async makeCdt(amount: number, days: number){
-        element(by.id('mountLending')).sendKeys(amount);
-        element(by.id('days')).sendKeys(days);
-        element(by.id('btnCalculate')).click();
+        element(by.css('#mountLending')).sendKeys(amount);
+        element(by.css('#days')).sendKeys(days);
+        element(by.css('#btnCalculate')).click();
     }
 }

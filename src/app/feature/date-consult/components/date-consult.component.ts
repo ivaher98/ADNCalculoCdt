@@ -18,14 +18,13 @@ export class DateConsultComponent implements OnInit {
   ngOnInit() {
     this.formConsult = new FormGroup({
       document: new FormControl('', [Validators.required])
-    })
+    });
+    this.isValid = true;
   }
 
   public consultDateService() {
-    let documentUser = this.formConsult.controls['document'].value;
-    console.log(documentUser);
+    const documentUser = this.formConsult.controls['document'].value;
     this.consultService.getDate(documentUser).subscribe((res: AssignDateModel) => {
-      console.log(res.dataSimulation)
       if (res) {
         Swal.fire(`Hola ${res.dataSimulation.dataBasicPersonal.nameUser} la cita asignada 
         con ${res.dataSimulation.dataDate.nameAssesor} 
@@ -33,9 +32,7 @@ export class DateConsultComponent implements OnInit {
           this.route.navigate(['./home']);
         })
       }
-
     });
-
   }
 
   get fConsult() { return this.formConsult }

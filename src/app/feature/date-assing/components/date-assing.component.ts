@@ -100,7 +100,8 @@ export class DateAssingComponent implements OnInit {
     const investmentCdt = Math.round((Number(valueInvest) * (retFuente)) / days);
     const value = investmentCdt.toString().replace(' ', '').replace('$', '').split('.').join('');
     Swal.fire({
-      text: `Tu rendimiento de un monto de ${this.dataSimulation.get('mountLending').value} a un plazo de ${days} días es de $${value}. ¿Deseas completar la información para agendar una cita con un asesor de la entidad?`,
+      text: `Tu rendimiento de un monto de ${this.dataSimulation.get('mountLending').value} a un 
+      plazo de ${days} días es de $${value}. ¿Deseas completar la información para agendar una cita con un asesor de la entidad?`,
       showDenyButton: true,
       showCancelButton: false,
       confirmButtonText: 'Sí, deseo agendar',
@@ -119,18 +120,18 @@ export class DateAssingComponent implements OnInit {
   public getDataCdtService() {
     this.assignService.getInfoCdt().subscribe((res: DataCdtInterface) => {
       this.dataCdt = res;
-    })
+    });
   }
 
   private getDataAsesorService() {
     this.assignService.getInfoAsesor().subscribe((res: any) => {
       this.dataAsesor = res;
-    })
+    });
   }
 
 
   get formSimulation() { return this.dataSimulation; }
-  get formDataPersonal() { return this.dataBasicPersonal }
-  get formDataDate() { return this.dataDate }
+  get formDataPersonal() { return this.dataBasicPersonal; }
+  get formDataDate() { return this.dataDate; }
 
 }
