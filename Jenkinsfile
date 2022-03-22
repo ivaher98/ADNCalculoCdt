@@ -15,11 +15,11 @@ pipeline {
         sh 'npm install'
       }
     }
-    stage("Test Unit"){
-      steps{
-        sh "npm run test -- --watch=false --browsers ChromeHeadless"
-      }
-    }
+    // stage("Test Unit"){
+    //   steps{
+    //     sh "npm run test -- --watch=false --browsers ChromeHeadless"
+    //   }
+    // }
 stage('Static Code Analysis') { steps{ echo '------------>Análisis de código estático<------------' withSonarQubeEnv('Sonar') { sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties" } } }
 
   }

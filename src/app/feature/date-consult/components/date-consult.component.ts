@@ -30,7 +30,7 @@ export class DateConsultComponent implements OnInit {
         con ${res.dataSimulation.dataDate.nameAssesor} 
         será la fecha ${res.dataSimulation.dataDate.date}`).then(() => {
           this.route.navigate(['./home']);
-        })
+        });
       }
     });
   }
