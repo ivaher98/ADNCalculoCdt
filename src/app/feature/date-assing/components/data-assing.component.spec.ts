@@ -57,4 +57,8 @@ describe('DateAssingComponent', () => {
         form.controls[controlNombreAsesor].setValue(asesor);
         expect(form.valid).toBeTrue();
     });
+
+    it('Validar monto de inversión', () => {
+        
+    })
 });
