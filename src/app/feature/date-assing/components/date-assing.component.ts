@@ -25,7 +25,7 @@ export class DateAssingComponent implements OnInit {
   public valueDays: number;
   public validateMount: boolean;
   public dataCdt: DataCdtInterface;
-  public dataAsesor: DataAsesorInterface[] = [];
+  public dataAsesor: DataAsesorInterface;
   public viewFormDate: boolean;
   public viewFormDataPersonal: boolean;
   public viewFormSimulate: boolean;
@@ -142,7 +142,7 @@ export class DateAssingComponent implements OnInit {
   }
 
   private getDataAsesorService() {
-    this.assignService.getInfoAsesor().subscribe((res: any) => {
+    this.assignService.getInfoAsesor().subscribe((res: DataAsesorInterface) => {
       this.dataAsesor = res;
     });
   }

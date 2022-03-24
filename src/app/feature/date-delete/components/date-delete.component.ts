@@ -27,7 +27,6 @@ export class DateDeleteComponent implements OnInit {
   public deleteDateService() {
     const documentUser = this.formDelete.controls['document'].value;
     this.deleteService.deleteDate(documentUser).subscribe((res: any) => {
-      console.log(res);
       if (res) {
         Swal.fire(
           {

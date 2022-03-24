@@ -2,7 +2,7 @@
     text-align: center;
     margin: 0 auto;
     font-size: 28px;
-    font-family: "Montserrat-Bold";
+    font-family: "Montserrat-Bold", 'sans-serif';
     color: #0f265c;
     font-weight: bold;
 }
@@ -11,7 +11,7 @@
     font-size: 18px;
     margin: 0;
     color: #1b2d54;
-    font-family: "OpenSans-Regular";
+    font-family: "OpenSans-Regular", 'sans-serif';
     max-width: 380px;
 }
 .container-button {
@@ -28,8 +28,7 @@ button {
     border: none;
     border: 1px solid #0f265c;
     border-radius: 16px;
-    font-family: "Montserrat-Bold";
-    font-size: 16px;
+    font-family: "Montserrat-Bold", 'sans-serif';
     cursor: pointer;
     margin-top:  30px;
 }
@@ -66,8 +65,7 @@ button {
                 display: block;
                 margin: 12px 0 12px 0;
                 color: #7c7c7c;
-                font-family: "OpenSans-Regular";
-                font-size: 16px;
+                font-family: "OpenSans-Regular", 'sans-serif';
             }
             .select {
                 width: 100%;
@@ -78,7 +76,6 @@ button {
                 cursor: pointer;
                 line-height: 1.1;
                 background-color: #fff;
-                font-size: 16px;
 
             }
         }

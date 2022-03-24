@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '@core/services/http.service';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AssignDateModel } from '../../../../core/interface/assignDate.interface';
 import { DataAsesorInterface } from '../model/dataAsesor';
@@ -16,7 +17,7 @@ export class AssignDateService {
     return this.httpService.doGet<DataCdtInterface>(environment.endPointGetDataCdt);
   }
 
-  getInfoAsesor(){
+  getInfoAsesor(): Observable<DataAsesorInterface>{
     return this.httpService.doGet<DataAsesorInterface>(environment.endPointGetDataAsesor);
   }
 

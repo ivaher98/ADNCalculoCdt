@@ -55,8 +55,7 @@ export class UtilsFunctions {
     }
 
     public getValueFromMaskMoney(valueMaskMoney: string) {
-        const value = valueMaskMoney.replace(' ', '').replace('$', '').split('.').join('');
-        return value;
+        return valueMaskMoney.replace(' ', '').replace('$', '').split('.').join('');
     }
 
     private validateRegValue(expreg: RegExp, value: string) {

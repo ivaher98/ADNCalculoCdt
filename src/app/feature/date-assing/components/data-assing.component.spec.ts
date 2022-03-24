@@ -64,5 +64,5 @@ describe('DateAssingComponent', () => {
         fixture.detectChanges();
         const validateMount = app.validateMount = true;
         expect(validateMount).toBe(true);
-    })
+    });
 });

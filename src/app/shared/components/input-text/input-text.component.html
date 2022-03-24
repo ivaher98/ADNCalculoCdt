@@ -5,16 +5,3 @@
             (focusout)="focusOut($event)">
     </div>
 </form>
-<!-- <div [class]="inputStyleType.type" *ngIf="formGroup == undefined || controlName == undefined">
-    <div [class]="'title-input ' + ((!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined) ? 'invalid' : '')">{{title}}</div>
-    <div [class]="'box-input-style ' + (disabledControl ? 'disabled ':'') + ((!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined) ? 'invalid' : '')">
-        <div *ngIf="details != null" [class]="'details-input-style ' + (disabledControl ? 'disabled ':'') + ((!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined) ? 'invalid' : '')">
-            {{details}}
-        </div>
-        <input type="text" [class]="'text-input-style ' + (details != null ? 'input-details' : '')" [placeholder]="placeHolderText != undefined ? placeHolderText : ''" (keyup)="mask($event)" [max]="maxLength" [min]="minLength" (focusout)="focusOut($event)">
-        <div *ngIf="errorText != undefined && (!isValid && control != undefined && control.invalid ) || ( !isValid && control == undefined)">
-            <div class="triangle-error"></div>
-            <div class="validation-error">{{errorText}}</div>
-        </div>
-    </div>
-</div> -->
