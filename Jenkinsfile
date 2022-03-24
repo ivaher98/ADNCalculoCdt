@@ -20,6 +20,7 @@ pipeline {
         sh "npm run test --watch=false --browsers ChromeHeadless"
       }
     }
+    
   stage('Static Code Analysis') {
     steps{
         withSonarQubeEnv('Sonar'){

@@ -20,7 +20,8 @@ describe('DataAssign Service', () => {
   let service: AssignDateService;
   let fixture: ComponentFixture<DateAssingComponent>;
   const endPointAssignDate = `${environment.endPointDataDate}`;
-  // const endPointDataCdt = `${environment.endPointGetDataCdt}`
+  const endPointDataCdt = `${environment.endPointGetDataCdt}`;
+  const endPointDataAsesor = `${environment.endPointGetDataAsesor}`;
 
   beforeEach(() => {
     const injector = TestBed.configureTestingModule({
@@ -52,9 +53,14 @@ describe('DataAssign Service', () => {
 
   it('debería obtener info CDT', () => {
     const dataCdt: DataCdtInterface = new DataCdtInterface(6.5, 4.5);
-    service.getInfoCdt().subscribe( (res: DataCdtInterface)  => {
+    service.getInfoCdt().subscribe((res: DataCdtInterface) => {
       expect(res).toEqual(dataCdt);
     });
+
+    const req = httpMock.expectOne(endPointDataCdt);
+    expect(req.request.method).toBe('GET');
+    req.event(new HttpResponse<DataCdtInterface>({ body: dataCdt }));
+
   });
 
   it('debería obtener info Asesor', () => {
@@ -62,6 +68,10 @@ describe('DataAssign Service', () => {
     service.getInfoAsesor().subscribe(res => {
       expect(res).toEqual(dataAsesor);
     });
+
+    const req = httpMock.expectOne(endPointDataAsesor);
+    expect(req.request.method).toBe('GET');
+    req.event(new HttpResponse<DataAsesorInterface>({ body: dataAsesor }));
   });
 
 

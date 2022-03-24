@@ -1,16 +1,17 @@
 <div class="container-data">
   <div class="form">
     <div class="title">
+      Consulta tu cita
     </div>
     <div class="form-group">
       <app-input-text [isValid]="isValid" [maxLength]="30" [title]="'Ingresa tú número de cédula'"
         [control]="fConsult.controls.document" [controlName]="'document'" [formGroup]="formConsult"
-        [placeHolderText]="'1.026.595.311'">
+        [placeHolderText]="'1.026.595.311'" [maskType]="maskTypeNumber">
       </app-input-text>
     </div>
 
     <div class="container-button">
-      <button (click)="consultDateService()">Consultar Cita</button>
+      <button (click)="consultDateService()" *ngIf="formConsult.valid">Consultar Cita</button>
     </div>
   </div>
 

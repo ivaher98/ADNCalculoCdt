@@ -43,16 +43,39 @@ export class InputTextComponent implements OnChanges {
         if (this.maskType !== undefined) {
             switch (this.maskType.type) {
                 case 'money':
-                    if (initValue !== undefined && initValue !== '') {
+                    if (initValue !== undefined || initValue !== '') {
                         this.f.get(this.controlName).setValue(this.utilsFunctions.validateMaskMoney(undefined, initValue));
                     } else {
                         const value = this.utilsFunctions.validateMaskMoney(event);
                         this.f.get(this.controlName).setValue(value);
                     }
                     break;
+                case 'number':
+                    this.f.get(this.controlName).setValue(this.onlyNumbers(event));
+                    break;
+                case 'name':
+                    this.f.get(this.controlName).setValue(this.onlyLetters(event));
+                    break;
             }
         }
     }
+
+    public onlyNumbers(event: KeyboardEvent) {
+        if (event !== undefined) {
+            const input = event.target as HTMLInputElement;
+            return input.value = input.value.replace(/[^0-9]/g, '');
+        }
+    }
+
+    public onlyLetters(event: KeyboardEvent) {
+        if (event !== undefined) {
+            const input = event.target as HTMLInputElement;
+            return input.value = input.value.replace(/[^A-Za-záéíóúÁÉÍÓÚ ]/g, '');
+
+        }
+
+    }
+
 
     focusOut(event) {
         const value = event.target.value;

@@ -6,7 +6,7 @@ import { DataAsesorInterface } from '../model/dataAsesor';
 import { DataCdtInterface } from '../model/dataCdt';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class AssignDateService {
 

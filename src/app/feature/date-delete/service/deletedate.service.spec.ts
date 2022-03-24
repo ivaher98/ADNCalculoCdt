@@ -10,7 +10,6 @@ import { DeleteDateService } from './deletedate.service';
 describe('Service: Deletedate', () => {
   let service: DeleteDateService;
   let fixture: ComponentFixture<DateDeleteComponent>;
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, RouterTestingModule],
@@ -26,6 +25,7 @@ describe('Service: Deletedate', () => {
     service.deleteDate(id).subscribe(res => {
       expect(res).toEqual(true);
     });
+
   });
 
 });

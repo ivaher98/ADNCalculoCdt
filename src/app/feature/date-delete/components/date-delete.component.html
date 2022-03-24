@@ -1,14 +1,17 @@
 <div class="container-data">
   <div class="form">
+    <div class="title">
+      Borra tu cita
+    </div>
     <div class="form-group">
       <app-input-text [isValid]="isValid" [maxLength]="30" [title]="'Ingresa tú número de cédula'"
         [control]="fDelete.controls.document" [controlName]="'document'" [formGroup]="formDelete"
-        [placeHolderText]="'1.026.595.311'">
+        [placeHolderText]="'1.026.595.311'" [maskType]="maskTypeNumber">
       </app-input-text>
     </div>
 
     <div class="container-button">
-      <button (click)="deleteDateService()">Eliminar cita</button>
+      <button (click)="deleteDateService()" *ngIf="formDelete.valid">Eliminar cita</button>
     </div>
   </div>
 

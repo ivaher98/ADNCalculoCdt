@@ -18,9 +18,12 @@ import { Router } from '@angular/router';
 export class DateAssingComponent implements OnInit {
   public isValid: boolean;
   public maskTypeMoney: MaskTypeInterface = MaskTypes.find(m => m.type === 'money');
+  public maskTypeNumber: MaskTypeInterface = MaskTypes.find(m => m.type === 'number');
+  public maskTypeName: MaskTypeInterface = MaskTypes.find(m => m.type === 'name');
   public inputTypeStyle: InputStyleTypeInterface = InputStyleTypes.find(m => m.type === '1');
   public interfaceInputRange: Array<DataListEffectiveRateInterface> = RateTypes;
   public valueDays: number;
+  public validateMount: boolean;
   public dataCdt: DataCdtInterface;
   public dataAsesor: DataAsesorInterface[] = [];
   public viewFormDate: boolean;
@@ -42,7 +45,7 @@ export class DateAssingComponent implements OnInit {
       this.dataBasicPersonal = new FormGroup({
         nameUser: new FormControl('', [Validators.required]),
         lastNameUser: new FormControl('', [Validators.required]),
-        document: new FormControl('', [Validators.required])
+        document: new FormControl('', [Validators.required, Validators.minLength(10)])
       });
       this.dataDate = new FormGroup({
         date: new FormControl('', [Validators.required]),
@@ -60,6 +63,19 @@ export class DateAssingComponent implements OnInit {
     this.viewFormDate = false;
     this.isValid = true;
     this.valueDays = 90;
+  }
+
+  public validateMountLending(event: KeyboardEvent): boolean {
+    const input = event.target as HTMLInputElement;
+    const value = Number(input.value.toString().replace(' ', '')
+      .replace('$', '').split('.').join(''));
+    const minValue = 1000000;
+    const maxValue = 10000000;
+    if ((value >= minValue) && (value <= maxValue)) {
+      return this.validateMount = true;
+    } else{
+      return this.validateMount = false;
+    }
   }
 
   public selectDays(event: any) {
@@ -83,7 +99,8 @@ export class DateAssingComponent implements OnInit {
         if (res) {
           Swal.fire({
             icon: 'success',
-            text: `Tú cita ha sido agendada con ${res.dataSimulation.dataDate.nameAssesor} para el día ${res.dataSimulation.dataDate.date}`!,
+            text: `Tú cita ha sido agendada con ${res.dataSimulation.dataDate.nameAssesor}
+            para el día ${res.dataSimulation.dataDate.date}`!,
           }).then(() => {
             this.route.navigate(['./home']);
           });
@@ -94,13 +111,14 @@ export class DateAssingComponent implements OnInit {
   }
 
   public calculateInvestmentCdt() {
-    const valueInvest: string = this.dataSimulation.get('mountLending').value.toString().replace(' ', '').replace('$', '').split('.').join('');
+    const valueInvest: string = this.dataSimulation.get('mountLending').value.toString().replace(' ', '')
+      .replace('$', '').split('.').join('');
     const days: number = this.dataSimulation.get('days').value;
     const retFuente = this.dataCdt[0].retfuente;
     const investmentCdt = Math.round((Number(valueInvest) * (retFuente)) / days);
     const value = investmentCdt.toString().replace(' ', '').replace('$', '').split('.').join('');
     Swal.fire({
-      text: `Tu rendimiento de un monto de ${this.dataSimulation.get('mountLending').value} a un 
+      text: `Tu rendimiento de un monto de ${this.dataSimulation.get('mountLending').value} a un
       plazo de ${days} días es de $${value}. ¿Deseas completar la información para agendar una cita con un asesor de la entidad?`,
       showDenyButton: true,
       showCancelButton: false,
@@ -117,7 +135,7 @@ export class DateAssingComponent implements OnInit {
     });
   }
 
-  public getDataCdtService() {
+  private getDataCdtService() {
     this.assignService.getInfoCdt().subscribe((res: DataCdtInterface) => {
       this.dataCdt = res;
     });

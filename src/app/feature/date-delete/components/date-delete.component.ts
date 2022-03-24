@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MaskTypeInterface, MaskTypes } from '@core/interface/maskType.interfaces';
 import Swal from 'sweetalert2';
 import { DeleteDateService } from '../service/deletedate.service';
 
@@ -12,12 +13,13 @@ import { DeleteDateService } from '../service/deletedate.service';
 export class DateDeleteComponent implements OnInit {
   isValid: boolean;
   formDelete: FormGroup = new FormGroup({});
+  maskTypeNumber: MaskTypeInterface = MaskTypes.find(m => m.type === 'number');
 
   constructor(private deleteService: DeleteDateService, private route: Router) { }
 
   ngOnInit() {
     this.formDelete = new FormGroup({
-      document: new FormControl('', [Validators.required]),
+      document: new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(10)], ),
     });
     this.isValid = true;
   }
@@ -25,13 +27,13 @@ export class DateDeleteComponent implements OnInit {
   public deleteDateService() {
     const documentUser = this.formDelete.controls['document'].value;
     this.deleteService.deleteDate(documentUser).subscribe((res: any) => {
-      alert('1');
+      console.log(res);
       if (res) {
         Swal.fire(
           {
             icon: 'success',
             text: `Se ha eliminado con éxito la cita`
-          }).then( () => {
+          }).then(() => {
             this.route.navigate(['./home']);
           });
       }

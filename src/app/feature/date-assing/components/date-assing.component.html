@@ -9,10 +9,10 @@
     </div>
     <div class="body">
       <div class="form-group">
-        <app-input-text [isValid]="isValid" [maxLength]="11" [title]="'Ingresa el valor a invertir'"
+        <app-input-text [isValid]="isValid" [maxLength]="13" [title]="'Ingresa el valor a invertir'"
           [errorText]="'El monto parece no estar bien'" [maskType]="maskTypeMoney"
           [control]="formSimulation.controls.mountLending" [controlName]="'mountLending'" [formGroup]="dataSimulation"
-          [placeHolderText]="'$ 500.000'">
+          [placeHolderText]="'$ 500.000'"(input)="validateMountLending($event)">
         </app-input-text>
       </div>
       <div class="form-group">
@@ -26,7 +26,7 @@
             {{valueDays}}
           </div>
           <div class="container-button">
-            <button (click)="calculateInvestmentCdt()" class="btn" id="btnCalculate" *ngIf="dataSimulation.valid">
+            <button (click)="calculateInvestmentCdt()" class="btn" id="btnCalculate" *ngIf="dataSimulation.valid && (validateMount === true)">
               Calcular Rendimiento
             </button>
           </div>
@@ -41,19 +41,19 @@
     <div class="form-group">
       <app-input-text [isValid]="isValid" [maxLength]="30" [title]="'Ingresa tus nombres'"
         [control]="formDataPersonal.controls.nameUser" [controlName]="'nameUser'" [formGroup]="dataBasicPersonal"
-        [placeHolderText]="'Ivan Camilo'">
+        [placeHolderText]="'Ivan Camilo'" [maskType]="maskTypeName" >
       </app-input-text>
     </div>
     <div class="form-group">
       <app-input-text [isValid]="isValid" [maxLength]="30" [title]="'Ingresa tus apellido'"
         [control]="formDataPersonal.controls.lastNameUser" [controlName]="'lastNameUser'"
-        [formGroup]="dataBasicPersonal" [placeHolderText]="'Hernandez Leon'">
-      </app-input-text>
+        [formGroup]="dataBasicPersonal" [placeHolderText]="'Hernandez Leon'" [maskType]="maskTypeName" > 
+      </app-input-text >
     </div>
     <div class="form-group">
-      <app-input-text [isValid]="isValid" [maxLength]="30" [title]="'Ingresa tu número de identidad'"
+      <app-input-text [isValid]="isValid" [maxLength]="10" [title]="'Ingresa tu número de identidad'"
         [control]="formDataPersonal.controls.document" [controlName]="'document'" [formGroup]="dataBasicPersonal"
-        [placeHolderText]="'1.026.595.311'">
+        [placeHolderText]="'1026595311'" [maskType]="maskTypeNumber">
       </app-input-text>
     </div>
     <div class="container-button" *ngIf="formDataPersonal.valid">

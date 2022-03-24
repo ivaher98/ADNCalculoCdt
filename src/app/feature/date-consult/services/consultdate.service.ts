@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { AssignDateModel } from '../../../core/interface/assignDate.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'platform'
 })
 export class ConsultDateService {
 
