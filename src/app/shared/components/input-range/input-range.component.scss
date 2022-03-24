@@ -6,7 +6,8 @@
     position: relative;
     padding-left: 10px;
     text-align: left;
-    font: 13px/20px Montserrat-Medium;
+    font: 13px/20px;
+    font-family: "Montserrat-Bold",  Arial, Helvetica, sans-serif;
     letter-spacing: -0.16px;
     color: #8c8c8c;
     padding-top: 20px;
@@ -124,7 +125,9 @@
     position: relative;
     float: left;
     text-align: left;
-    font: 12px/17px OpenSans-SemiBold;
+    font: 12px/17px;
+    font-family: "OpenSans-Bold",  Arial, Helvetica, sans-serif;
+
     letter-spacing: -0.12px;
     color: #e0e0e0;
 }
@@ -132,7 +135,8 @@
     position: relative;
     float: right;
     text-align: left;
-    font: 12px/17px OpenSans-SemiBold;
+    font: 12px/17px;
+    font-family: "OpenSans-Bold",  Arial, Helvetica, sans-serif;
     letter-spacing: -0.12px;
     color: #e0e0e0;
 }
