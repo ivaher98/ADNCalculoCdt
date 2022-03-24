@@ -15,11 +15,11 @@ pipeline {
         sh 'npm install'
       }
     }
-    stage("Test Unit"){
-      steps{
-        sh "npm run test --watch=false"
-      }
-    }
+    // stage("Test Unit"){
+    //   steps{
+    //     sh "npm run test --watch=false"
+    //   }
+    // }
     
   stage('Static Code Analysis') {
     steps{

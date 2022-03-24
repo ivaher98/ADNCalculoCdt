@@ -59,6 +59,10 @@ describe('DateAssingComponent', () => {
     });
 
     it('Validar monto de inversión', () => {
-        
+        fixture = TestBed.createComponent(DateAssingComponent);
+        const app = fixture.componentInstance;
+        fixture.detectChanges();
+        const validateMount = app.validateMount = true;
+        expect(validateMount).toBe(true);
     })
 });

@@ -69,6 +69,7 @@ describe('DataAssign Service', () => {
       expect(res).toEqual(dataAsesor);
     });
 
+
     const req = httpMock.expectOne(endPointDataAsesor);
     expect(req.request.method).toBe('GET');
     req.event(new HttpResponse<DataAsesorInterface>({ body: dataAsesor }));
