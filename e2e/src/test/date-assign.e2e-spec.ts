@@ -23,17 +23,17 @@ describe('Pruebas CDT', () => {
     expect(dateAssignPage.getDays()).toEqual('90');
   });
 
-  it('Debería aceptar solo números', () => {
-    const expreg = /^([0-9])*$/;
-    dateAssignPage.navigateTo();
+  // it('Debería aceptar solo números', () => {
+  //   const expreg = /^([0-9])*$/;
+  //   dateAssignPage.navigateTo();
 
-    expect(dateAssignPage.getMountLending()).toMatch(expreg);
-  });
+  //   expect(dateAssignPage.getMountLending()).toMatch(expreg);
+  // });
 
-  it('Debería calcular cdt', () => {
-    dateAssignPage.navigateTo();
+  // it('Debería calcular cdt', () => {
+  //   dateAssignPage.navigateTo();
 
-    expect(dateAssignPage.getMountLending());
-  });
+  //   expect(dateAssignPage.getMountLending());
+  // });
 
 });

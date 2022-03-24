@@ -17,9 +17,7 @@ export class DataAssignPage {
         await element(by.css('#btnCalculate')).click();
     }
 
-    async makeCdt(amount: number, days: number){
-        element(by.css('#mountLending')).sendKeys(amount);
-        element(by.css('#days')).sendKeys(days);
-        element(by.css('#btnCalculate')).click();
+    async makeCdt(amount: number){
+        await element(by.css('#mountLending')).sendKeys(amount);
     }
 }
